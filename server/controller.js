@@ -6,7 +6,7 @@ module.exports = {
       const homes = await pool.query("SELECT * FROM home;");
       return res.status(200).send(homes.rows);
     } catch (err) {
-      console.error(err.message());
+      console.error(err.message);
       return res.status(500).send("Internal Server Error");
     }
   },
@@ -18,7 +18,7 @@ module.exports = {
       ]);
       return res.status(200).send(home.rows);
     } catch (err) {
-      console.error(err.message());
+      console.error(err.message);
       return res.status(500).send("Internal Server Error");
     }
   },
@@ -27,12 +27,12 @@ module.exports = {
       const { home_name, home_address, home_price, home_img, home_disc } =
         req.body;
       const home = await pool.query(
-        "INSERT INTO home (home_name, home_address, home_price, home_img, home_disc) VALUES ($1, $2, $3, $4, $5) RETRUNING *;",
+        "INSERT INTO home (home_name, home_address, home_price, home_img, home_disc) VALUES ($1, $2, $3, $4, $5);",
         [home_name, home_address, home_price, home_img, home_disc]
       );
       return res.status(200).send(home.rows);
     } catch (err) {
-      console.error(err.message());
+      console.error(err.message);
       return res.status(500).send("Internal Server Error");
     }
   },
@@ -46,17 +46,19 @@ module.exports = {
       );
       return res.status(200).send(home.rows);
     } catch (err) {
-      console.error(err.message());
+      console.error(err.message);
       return res.status(500).send("Internal Server Error");
     }
   },
   deleteHouse: async (req, res) => {
     try {
       const { id } = req.params;
-      const home = await pool.query("DELETE FROM home WHERE id = $1;", [id]);
+      const home = await pool.query("DELETE FROM home WHERE home_id = $1;", [
+        id,
+      ]);
       return res.status(200).send(home.rows);
     } catch (err) {
-      console.error(err.message());
+      console.error(err.message);
       return res.status(500).send("Internal Server Error");
     }
   },

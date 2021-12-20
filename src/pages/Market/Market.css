@@ -1,0 +1,12 @@
+.market-con {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10vh 0;
+  background-color: #ebebebaa;
+  border: 1px solid #424242aa;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1vw;
+  row-gap: 1vh;
+}
