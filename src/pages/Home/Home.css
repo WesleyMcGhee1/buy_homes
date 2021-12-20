@@ -1,0 +1,33 @@
+header {
+  height: 70vh;
+  width: 100%;
+  background-color: #242424;
+}
+.header-con {
+  width: 40vw;
+  margin: 0 auto;
+  padding-top: 25vh;
+  color: white;
+  text-align: center;
+}
+.bannar {
+  font-size: 4rem;
+}
+.disc {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+.link-btn {
+  height: 5vh;
+  width: 7vw;
+  margin-top: 3vh;
+  color: white;
+  background-color: #424242;
+  border: 2px solid white;
+}
+.link-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
